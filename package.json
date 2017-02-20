@@ -1,0 +1,52 @@
+{
+  "name": "npm-build-boilerplate",
+  "version": "0.0.1",
+  "description": "A set of common build tasks written with npm scripts.",
+  "author": "Damon Bauer <hello@damonbauer.me>",
+  "license": "MIT",
+  "keywords": [
+    "npm",
+    "scripts",
+    "npm scripts",
+    "watch",
+    "minify",
+    "compress"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/assets/{css/*,js/*,images/*}",
+    "create-directories": "mkdirp dist/assets/js -p && mkdirp dist/assets/css -p",
+
+    "autoprefixer": "postcss -u autoprefixer -r dist/assets/css/*",
+    "stylus": "stylus src/assets/css/main.styl -o dist/assets/css/style.css",
+    "imagemin": "imagemin src/assets/images/* -o dist/assets/images",
+
+    "build:css": "npm run stylus && npm run autoprefixer",
+    "build:images": "npm run imagemin",
+    "build:js": "cp src/assets/js/*.js dist/assets/js/",
+    "build:html": "cp src/*.html dist/",
+    "build": "npm run create-directories && npm run build:css && npm run build:images && npm run build:js && npm run build:html",
+    "build:with-test": "npm run build && npm run serve:pre-release",
+
+    "serve:pre-release": "browser-sync start --config bs-config-pre-release.js",
+    "serve": "browser-sync start --config bs-config.js",
+    "watch:css": "stylus -u autoprefixer-stylus -w ./src/assets/css/main.styl -o ./src/assets/css/style.css",
+    "watch": "concurrently --names \"serve, stylus\" --prefix name \"npm run serve\" \"npm run watch:css\"",
+
+    "postinstall": "npm run create-directories && npm run build && npm run watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "autoprefixer-stylus": "0.10.0",
+    "browser-sync": "^2.12.8",
+    "concurrently": "3.0.0",
+    "imagemin-cli": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "stylus": "0.54.5",
+    "npm-run-all": "^2.1.1",
+    "postcss-cli": "^2.5.2",
+    "rimraf": "^2.5.4",
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^0.6.6",
+    "uglify-js": "^2.6.2"
+  }
+}

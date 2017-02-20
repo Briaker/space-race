@@ -1,0 +1,1076 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"num",
+				"numTails"
+			],
+			[
+				"ran",
+				"randoNum"
+			],
+			[
+				"en",
+				"energy"
+			],
+			[
+				"string",
+				"stringCheese"
+			],
+			[
+				"nu",
+				"number2"
+			],
+			[
+				"m",
+				"myArray"
+			],
+			[
+				"in",
+				"inventory"
+			],
+			[
+				"flip",
+				"flipMany"
+			],
+			[
+				"pro",
+				"prompt"
+			],
+			[
+				"pr",
+				"prompt"
+			],
+			[
+				"ma",
+				"maxNumber"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"fl",
+				"flex-wrap"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"fle",
+				"flex-direction"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"opac",
+				"opacity"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"flex",
+				"flex-start"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"space",
+				"space-around"
+			],
+			[
+				"bran",
+				"brandPrimaryLight"
+			],
+			[
+				"br",
+				"brandAccent"
+			],
+			[
+				"tra",
+				"translateY"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"ul",
+				"ulReset"
+			],
+			[
+				"brand",
+				"brandDim"
+			],
+			[
+				"bra",
+				"brandNeutral"
+			],
+			[
+				"bor",
+				"border-box"
+			],
+			[
+				"lignt",
+				"lighten"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"se",
+				"largeSectionPadding"
+			],
+			[
+				"lin",
+				"line-height"
+			],
+			[
+				"fel",
+				"flexCenter"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"op",
+				"openSans"
+			],
+			[
+				"spa",
+				"space-around"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"hi",
+				"height"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"com",
+				"column"
+			],
+			[
+				"ur",
+				"urgentRight"
+			],
+			[
+				"f",
+				"flex"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"flex-w",
+				"flex-wrap"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"line",
+				"inline-block"
+			],
+			[
+				"pat",
+				"partials/"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"felx",
+				"flex-basis"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"alig",
+				"align-items"
+			],
+			[
+				"backgr",
+				"background-position"
+			],
+			[
+				"po",
+				"pos-r\tposition: relative;"
+			],
+			[
+				"mari",
+				"margin"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"so",
+				"solid"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"abo",
+				"absolute"
+			],
+			[
+				"form",
+				"from"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"aut",
+				"authHandler"
+			],
+			[
+				"comp",
+				"Component"
+			],
+			[
+				"store",
+				"storeRef"
+			],
+			[
+				"sp",
+				"snapshot"
+			],
+			[
+				"sto",
+				"storeRef"
+			],
+			[
+				"au",
+				"authData"
+			],
+			[
+				"ren",
+				"renderLogin"
+			],
+			[
+				"add",
+				"addFish"
+			],
+			[
+				"Ad",
+				"AddFishForm"
+			],
+			[
+				"remo",
+				"removeFromOrder"
+			],
+			[
+				"set",
+				"setState"
+			],
+			[
+				"lo",
+				"localStorageRef"
+			],
+			[
+				"ord",
+				"orderIds"
+			],
+			[
+				"a",
+				"addToOrder"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"fish",
+				"fishForm"
+			],
+			[
+				"Sto",
+				"StorePicker"
+			],
+			[
+				"get",
+				"getFunName"
+			],
+			[
+				"c",
+				"className"
+			],
+			[
+				"tv",
+				"tvUser"
+			],
+			[
+				"li",
+				"li\tTag"
+			],
+			[
+				"try",
+				"try\tTry/Except/Else"
+			],
+			[
+				"tr",
+				"try\tTry/Except/Else"
+			],
+			[
+				"top",
+				"top_shows"
+			],
+			[
+				"fi",
+				"fields"
+			],
+			[
+				"EP",
+				"EPISODE_COUNT"
+			],
+			[
+				"SE",
+				"SEASON_COUNT"
+			],
+			[
+				"SER",
+				"SERIES_COUNT"
+			],
+			[
+				"GEN",
+				"GENRE_COUNT"
+			],
+			[
+				"sea",
+				"seasonid"
+			],
+			[
+				"ep",
+				"episodename"
+			],
+			[
+				"e",
+				"episodenumber"
+			],
+			[
+				"epi",
+				"episodename"
+			],
+			[
+				"AP",
+				"APP_NAME"
+			],
+			[
+				"this",
+				"thisID"
+			],
+			[
+				"Test",
+				"testClassA"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"new",
+				"newSeason"
+			],
+			[
+				"series_",
+				"series_id"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"N",
+				"NULL"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"php",
+				"phpinfo"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 500.0,
+		"last_filter": "space",
+		"selected_items":
+		[
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"aut",
+				"Auto indent"
+			],
+			[
+				"emoji",
+				"Emoji: Insert Emoji"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"a",
+				"Auto indent"
+			],
+			[
+				"indent le",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"in",
+				"Auto indent"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"snip",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"pacakage",
+				"Package Control: List Packages"
+			],
+			[
+				"ins\t",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"lo",
+				"Convert Case: Lower Case"
+			],
+			[
+				"up",
+				"Convert Case: Upper Case"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"line en",
+				"Line Ending: Unix"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"pacake",
+				"Package Control: Install Package"
+			],
+			[
+				"title",
+				"Package Control: Install Package"
+			],
+			[
+				"package Control:",
+				"Package Control: Add Repository"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"end",
+				"Line Ending: Unix"
+			],
+			[
+				"ind",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"int",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"pick",
+				"Package Control: List Packages"
+			],
+			[
+				"inde",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"line",
+				"Raw Line Edit: Toggle"
+			],
+			[
+				"paca",
+				"Package Control: Install Package"
+			],
+			[
+				"add",
+				"Package Control: Add Repository"
+			],
+			[
+				"pacak",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 713.0
+	},
+	"console":
+	{
+		"height": 463.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/sites/hackeryou/projects/memorizer"
+	],
+	"file_history":
+	[
+		"/C/sites/hackeryou/makefolders.txt",
+		"/C/sites/hackeryou/week3/day5/js-fundamentals-exercise.html",
+		"/C/sites/hackeryou/week3/day5/js-fundamentals-exercise-caitlin.html",
+		"/C/sites/hackeryou/week3/day5/warrior.html",
+		"/E/Fall2013/PROG/Lab02/Lab02/Lab02/Program.cs",
+		"/E/Fall2013/PROG/Lab02/Lab02/Lab02/Lab02.csproj",
+		"/E/Fall2013/PROG/Lab02/Lab02/Slice Calculator.sln",
+		"/C/sites/hackeryou/week3/day5/this.html",
+		"/C/sites/hackeryou/week3/day5/looping-arrays.html",
+		"/C/sites/hackeryou/week3/day5/arrays.html",
+		"/C/sites/hackeryou/week3/day5/array-exercises.html",
+		"/C/sites/hackeryou/week3/day5/objects-method-exercises.html",
+		"/C/sites/hackeryou/week3/day5/objects-exercises.html",
+		"/C/sites/hackeryou/week3/day4/objects.html",
+		"/C/sites/hackeryou/week3/day4/functions2.html",
+		"/C/sites/hackeryou/week3/week3.sublime-project",
+		"/C/sites/hackeryou/week3/day4/functions.html",
+		"/C/sites/hackeryou/week3/day4/functions-js.html",
+		"/C/sites/hackeryou/week3/day4/variables-operators-functions.html",
+		"/C/sites/hackeryou/week3/day4/quizJS.html",
+		"/C/sites/hackeryou/week3/day4/loopsJS.html",
+		"/C/sites/hackeryou/week3/day4/variables-operators.html",
+		"/C/sites/hackeryou/week3/day4/js-fundamentals-exercise.html",
+		"/C/sites/hackeryou/week3/jsOne.html",
+		"/C/sites/hackeryou/week3/getName.js",
+		"/C/sites/hackeryou/projects/mercy-heart/src/index.html",
+		"/C/sites/hackeryou/projects/portfolio/dist/index.html",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_main.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_purchase.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_recent-causes.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_responsive.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_slider.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_urgent-cause.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_variables.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_nav.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_mixins.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_blog.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_contact.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/main.styl",
+		"/C/sites/hackeryou/projects/portfolio/dist/assets/css/style.css",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/js/sliders.js",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/js/progressBars.js",
+		"/C/sites/hackeryou/projects/mercy-heart/dist/assets/css/style.css",
+		"/C/sites/hackeryou/projects/mercy-heart/package.json",
+		"/C/sites/hackeryou/projects/nginx-hy.conf",
+		"/C/sites/hackeryou/projects/mercy-heart/dist/index.html",
+		"/C/sites/hackeryou/projects/chilli-restauraunt/src/index.html",
+		"/C/sites/hackeryou/projects/events.html",
+		"/C/sites/hackeryou/projects/menu.html",
+		"/C/sites/hackeryou/projects/dist/other-thing.html",
+		"/C/sites/hackeryou/projects/index.html",
+		"/C/sites/hackeryou/templates/digitalocean/nginx-hy.conf",
+		"/C/sites/hackeryou/projects/chilli-restauraunt/package.json",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_counters.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_faq.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/js/faqToggle.js",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_contributions.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/images/svg/arrow-left.svg",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Documentation/credits.txt",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/images/svg/arrow-right.svg",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_header.styl",
+		"/C/sites/hackeryou/week2/day4/responsive-exercises/ex1.html",
+		"/C/sites/hackeryou/week2/day4/responsive3.html",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Assets/circle2.svg",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Assets/circle.svg",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Assets/circle3.svg",
+		"/C/sites/hackeryou/projects/mercy-heart/src/svg.html",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Assets/circle3-flipped.svg",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Documentation/sudo.txt",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_footer.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/bs-config.js",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_signup.styl",
+		"/C/sites/hackeryou/week2/day5/bem.html",
+		"/C/sites/hackeryou/week2/day3/sass/index.html",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Documentation/text.txt",
+		"/C/sites/hackeryou/week2/day4/animations/index.html",
+		"/C/sites/hackeryou/week2/day4/x-files/index.html",
+		"/C/sites/hackeryou/week2/test.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/_normalize.styl",
+		"/C/sites/hackeryou/week2/day4/animations/jqueryanimate.html",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/style.css",
+		"/C/sites/hackeryou/projects/mercy-heart/src/headers.html",
+		"/C/sites/hackeryou/projects/mercy-heart/src/font.html",
+		"/C/sites/hackeryou/projects/mercy-heart/src/assets/css/partials/main.styl",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/overlay-test.html",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/Documentation/helpfile.md",
+		"/C/sites/hackeryou/week2/day3/responsive/responsive.html",
+		"/C/sites/hackeryou/week1/day4/icons.html",
+		"/C/sites/hackeryou/projects/mercy-heart/working_files/sudo.txt",
+		"/C/sites/hackeryou/week1/day4/svg-images.html",
+		"/C/sites/hackeryou/week1/day4/twoColumns.html",
+		"/C/sites/hackeryou/week1/day4/FBcodealong/FBcodealong/styles/style.css",
+		"/C/sites/hackeryou/week1/day2/colours.html",
+		"/C/sites/hackeryou/week1/day2/web-fonts.html",
+		"/C/sites/hackeryou/week2/day2/slide-out-nav/slide-out-nav-START.html",
+		"/C/Users/Brian/AppData/Roaming/Sublime Text 3/Packages/User/normalize.sublime-snippet",
+		"/C/sites/hackeryou/week2/day3/sass/partials/_variables.scss",
+		"/C/Users/Brian/AppData/Roaming/Sublime Text 3/Packages/User/clearfix.sublime-snippet",
+		"/C/sites/hackeryou/week2/day3/responsive/responsive1.html",
+		"/C/Users/Brian/AppData/Roaming/Sublime Text 3/Packages/User/jquerycdn.sublime-snippet",
+		"/C/sites/hackeryou/week2/day3/responsive.html",
+		"/C/Users/Brian/AppData/Roaming/Sublime Text 3/Packages/User/setup.sublime-snippet",
+		"/C/sites/hackeryou/week2/day3/sass/main.scss",
+		"/C/sites/hackeryou/week2/day3/sass/partials/_navBar.scss",
+		"/C/sites/hackeryou/week2/day3/sass/partials/_footer.scss",
+		"/C/sites/hackeryou/week2/day3/sass/partials/_navBar.css",
+		"/C/sites/hackeryou/week2/day3/sass/_footer.scss",
+		"/C/Users/Brian/AppData/Roaming/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/C/Users/Brian/AppData/Roaming/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
+		"/C/sites/hackeryou/week2/day3/sass/_normalize.scss",
+		"/C/sites/hackeryou/week2/day2/css-selectors.html",
+		"/C/sites/hackeryou/week2/day2/flexboxTwo.html",
+		"/C/sites/hackeryou/week2/day2/flexboxCodealong/flexboxCodealongStart/index.html",
+		"/C/sites/hackeryou/week2/day2/flexboxCodealong/flexboxCodealongStart/style.css",
+		"/C/sites/hackeryou/week2/day2/align-self.html",
+		"/C/sites/hackeryou/week1/day4/emmet.html",
+		"/C/sites/hackeryou/week2/day2/flexboxOne.html",
+		"/C/sites/hackeryou/week2/day2/flexBoxOne.html",
+		"/C/sites/hackeryou/week2/day1/airbnb-form.html",
+		"/C/sites/hackeryou/week2/day1/form.html",
+		"/C/sites/hackeryou/week1/project1/src/css/style.css",
+		"/C/sites/hackeryou/week2/day1/nav_excercise/list-gallery.html",
+		"/C/sites/hackeryou/week2/day1/nav_excercise/simple-nav.html",
+		"/C/sites/hackeryou/week2/day1/nav_excercise/dropdown.html",
+		"/C/sites/hackeryou/week2/day1/nav_excercise/dropdownANSWER.html",
+		"/C/sites/hackeryou/week2/day1/list-style.html",
+		"/C/sites/hackeryou/week2/day1/list.html",
+		"/C/sites/hackeryou/week1/project1/files/Restaurant/restaurant-info.txt"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"<open folders>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"add",
+			"wrong",
+			"correct",
+			"\"Wrong you dummy!\"",
+			"\"Correct!\"",
+			"2",
+			"age",
+			"alt=\"",
+			"&",
+			"hover",
+			"$",
+			"full",
+			"../",
+			"count",
+			".html",
+			"menu.html",
+			"/img/",
+			"/img",
+			"/img/",
+			"location",
+			"#",
+			"water",
+			"progress",
+			">",
+			"100%",
+			"href=\"\"",
+			"causesArrowSVG",
+			"arrowSVG",
+			"href=\"\"",
+			"48px",
+			"100%",
+			"</h2>",
+			"<h2>",
+			"sliderItem",
+			";",
+			":",
+			"// .causesWrapper",
+			":",
+			";",
+			"}",
+			"{",
+			":",
+			";",
+			"-->\n",
+			"4",
+			"neutr",
+			"box-sizing",
+			");\n",
+			"gradient",
+			"dark",
+			"h3",
+			"h4",
+			"Person",
+			"p",
+			"sync",
+			"wrapper",
+			"flexCenter",
+			"open",
+			"h4",
+			"progressOf",
+			"countWrapper",
+			"h3",
+			"display flex",
+			"li",
+			"overlay",
+			"contribute",
+			";",
+			";\n",
+			":",
+			";",
+			"';\n",
+			"header",
+			"small",
+			"Font",
+			":",
+			"Heading",
+			"src/",
+			"100",
+			"div\n\t\t\t\t\t\t[i]",
+			"li",
+			"li\n\t\t\t\t\t[icon]",
+			"li\n\t\t\t\t\t\t\t\t\t\t[i] ",
+			"li",
+			"[divider line]",
+			"line",
+			"div",
+			"li",
+			" \n",
+			";\n",
+			">\n",
+			"HI",
+			"check",
+			"padding",
+			"padding:15px 10px;",
+			"list",
+			"http://lorempixel.com/400/400",
+			"translate",
+			"button",
+			"$section-padding",
+			"font-fa",
+			"speicals",
+			"submit",
+			"button",
+			"white",
+			"#fff",
+			"padding",
+			"color #000",
+			"color black",
+			"color white",
+			"color #FFF",
+			"red",
+			"font-weight",
+			"border-box",
+			"wei",
+			"body",
+			"26px",
+			" float left",
+			"line-he",
+			"line-h",
+			"line-",
+			"h2>",
+			"<fieldset> \n  \t\t\t\t\t\t\t\tSeats: <input type=\"text\" name=\"name\" id=\"name\">\n\t\t\t\t\t\t\t</fieldset>",
+			"// =======================================",
+			"inline",
+			"./img/",
+			">\n",
+			"></",
+			"hover"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"img/",
+			"href=\"#\"",
+			"underlay",
+			"padding:20px 10px;",
+			"list-gallery.jpg",
+			"$section-spacing",
+			"h4>",
+			"/img/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "memorizer.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"settings",
+				"tvtracker\\tvtracker\\settings.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 233.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
