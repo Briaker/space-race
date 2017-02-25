@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"function"
+			],
+			[
+				"tiles",
+				"tilesFlipped"
+			],
+			[
 				"num",
 				"numTails"
 			],
@@ -487,6 +495,34 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 1285,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/assets/js/game.js",
+			"settings":
+			{
+				"buffer_size": 6113,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "working_files/sudo.txt",
+			"settings":
+			{
+				"buffer_size": 3273,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "number (< > === <= >= !==) number (|| &&) number ("
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -678,10 +714,18 @@
 	},
 	"expanded_folders":
 	[
-		"/C/sites/hackeryou/projects/memorizer"
+		"/C/sites/hackeryou/projects/memorizer",
+		"/C/sites/hackeryou/projects/memorizer/src",
+		"/C/sites/hackeryou/projects/memorizer/src/assets",
+		"/C/sites/hackeryou/projects/memorizer/src/assets/js",
+		"/C/sites/hackeryou/projects/memorizer/working_files"
 	],
 	"file_history":
 	[
+		"/C/sites/hackeryou/projects/memorizer/working_files/info.txt",
+		"/C/sites/hackeryou/projects/memorizer/src/assets/css/partials/_main.styl",
+		"/C/sites/hackeryou/projects/memorizer/package.json",
+		"/C/sites/hackeryou/projects/memorizer/src/assets/js/game.js",
 		"/C/sites/hackeryou/makefolders.txt",
 		"/C/sites/hackeryou/week3/day5/js-fundamentals-exercise.html",
 		"/C/sites/hackeryou/week3/day5/js-fundamentals-exercise-caitlin.html",
@@ -805,15 +849,11 @@
 		"/C/sites/hackeryou/week1/project1/src/css/style.css",
 		"/C/sites/hackeryou/week2/day1/nav_excercise/list-gallery.html",
 		"/C/sites/hackeryou/week2/day1/nav_excercise/simple-nav.html",
-		"/C/sites/hackeryou/week2/day1/nav_excercise/dropdown.html",
-		"/C/sites/hackeryou/week2/day1/nav_excercise/dropdownANSWER.html",
-		"/C/sites/hackeryou/week2/day1/list-style.html",
-		"/C/sites/hackeryou/week2/day1/list.html",
-		"/C/sites/hackeryou/week1/project1/files/Restaurant/restaurant-info.txt"
+		"/C/sites/hackeryou/week2/day1/nav_excercise/dropdown.html"
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -829,6 +869,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"p",
+			"i",
+			"I",
+			"i",
+			"countDown",
+			"question",
+			"difficulty",
+			"numbers",
+			"0",
+			"tilesFlipped",
+			"card",
+			"gameObject",
+			"Object",
+			"card",
+			"pop",
+			"flipCard",
+			"onclick=\"flipTile()\"",
 			"add",
 			"wrong",
 			"correct",
@@ -939,24 +996,7 @@
 			"color black",
 			"color white",
 			"color #FFF",
-			"red",
-			"font-weight",
-			"border-box",
-			"wei",
-			"body",
-			"26px",
-			" float left",
-			"line-he",
-			"line-h",
-			"line-",
-			"h2>",
-			"<fieldset> \n  \t\t\t\t\t\t\t\tSeats: <input type=\"text\" name=\"name\" id=\"name\">\n\t\t\t\t\t\t\t</fieldset>",
-			"// =======================================",
-			"inline",
-			"./img/",
-			">\n",
-			"></",
-			"hover"
+			"red"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -982,8 +1022,100 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								848,
+								848
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/itg.dark.tmTheme",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/assets/js/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3947,
+								3947
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/itg.dark.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2494.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "working_files/sudo.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3273,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2838,
+								2842
+							]
+						],
+						"settings":
+						{
+							"auto_name": "number (< > === <= >= !==) number (|| &&) number (",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1067,7 +1199,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 233.0,
 	"status_bar_visible": true,
 	"template_settings":

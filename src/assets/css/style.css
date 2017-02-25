@@ -200,7 +200,12 @@ header {
 html {
   font-family: 'Open Sans', sans-serif;
 }
-section {
+body {
+  background: url("../images/moon_corner_body_01.png") #05060a;
+  font-family: 'Orbitron', sans-serif;
+  background-repeat: no-repeat;
+}
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,8 +216,18 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  height: 100vh;
 }
-.gameGrid {
+.wrapper {
+  width: 1400px;
+  height: 800px;
+  background: url("../images/glare_03.png") #050b19;
+  border-radius: 20px;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,13 +237,9 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 1rem;
-  margin: 0 auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 800px;
+  width: $full;
 }
-.gameTile {
+.game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -238,19 +249,295 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: calc(200px - 20px);
-  height: 270px;
-  background: #a52a2a;
-  margin: 10px;
-  padding: 1rem;
-  box-shadow: 0px 0px 20px 0px rgba(100,100,100,0.4);
-  cursor: pointer;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.faceUp {
-  background: #daa520;
+.controlsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  padding: 85px;
 }
-.matched {
-  background: #008000;
+.questionWrapper {
+  background: url("../images/expression_window_03.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 740px;
+  height: 320px;
+}
+.questions {
+  font-size: 22px;
+}
+.timerWrapper {
+  position: relative;
+  top: 40px;
+  left: 60px;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+.timer {
+  width: 30%;
+}
+.buttonWrapper {
+  width: 100%;
+  margin: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.buttonWrapper button {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+}
+button.true {
+  background: url("../images/true_button_03.png");
+  background-repeat: no-repeat;
+  width: 156px;
+  height: 156px;
+  border: none;
+  margin-right: 10px;
+}
+button.false {
+  background: url("../images/false_button_03.png");
+  background-repeat: no-repeat;
+  width: 156px;
+  height: 156px;
+  border: none;
+}
+.fuelWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  color: #fff;
+}
+.fuel {
+  width: 642px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+.fuelGaugeWrapper {
+  position: relative;
+  width: 642px;
+  height: 104px;
+}
+.fuelGaugeFiller {
+  background: -webkit-linear-gradient(bottom, #536db8, #fff);
+  background: linear-gradient(0deg, #536db8, #fff);
+  width: 602px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+.fuelGaugeFillerReserve {
+  background: -webkit-linear-gradient(bottom, #a52a2a, #fff);
+  background: linear-gradient(0deg, #a52a2a, #fff);
+  width: 15%;
+  left: 0;
+  height: 80px;
+  position: absolute;
+  z-index: 5;
+}
+.fuelGaugeFillerCover {
+  background: #050b19;
+  width: 90%;
+  right: 0;
+  height: 80px;
+  position: absolute;
+  z-index: 5;
+}
+.fuelGaugeFrame {
+  width: 642px;
+  height: 104px;
+  position: absolute;
+  background: url("../images/fuel_bar_03.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.spaceWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 25px;
+  margin-left: 0;
+  border: 10px solid #536db8;
+  border-radius: 20px;
+  width: 35%;
+  height: 750px;
+  background: url("../images/space.jpg") #000;
+  background-position: center 100%;
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.rocket {
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+  position: absolute;
+  height: 350px;
+}
+.rocket svg {
+  height: 350px;
+  width: 200px;
+}
+.rocket.earth {
+  bottom: 0;
+}
+.rocket.space {
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+.rocket.moonLanding {
+  top: 1%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.moon {
+  -webkit-transition: 1.2s all ease;
+  transition: 1.2s all ease;
+  position: absolute;
+  top: -65%;
+}
+.moon svg {
+  height: 600px;
+  width: 600px;
+}
+.moon.hide {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.grass {
+  -webkit-transition: 1.2s all ease;
+  transition: 1.2s all ease;
+  position: absolute;
+  bottom: -10px;
+}
+.grass svg {
+  min-width: 100%;
+  height: 100px;
+  width: 1400px;
+}
+.grass.hide {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+.question {
+  color: #000;
+}
+.question .value {
+  font-weight: 600;
+}
+.question .comparisonOperator {
+  font-weight: 600;
+  color: #000;
+}
+.question .logicOperator {
+  font-weight: 600;
+  color: #000;
+}
+.question.correct > * {
+  -webkit-animation: 0.4s linear 0s flashCorrect;
+          animation: 0.4s linear 0s flashCorrect;
+}
+.question.incorrect > * {
+  -webkit-animation: 0.4s linear 0s flashIncorrect;
+          animation: 0.4s linear 0s flashIncorrect;
+}
+@-webkit-keyframes flashCorrect {
+  30% {
+    color: #008000;
+  }
+  50% {
+    color: #008000;
+  }
+  60% {
+    color: #000;
+  }
+}
+@keyframes flashCorrect {
+  30% {
+    color: #008000;
+  }
+  50% {
+    color: #008000;
+  }
+  60% {
+    color: #000;
+  }
+}
+@-webkit-keyframes flashIncorrect {
+  30% {
+    color: #f00;
+  }
+  50% {
+    color: #f00;
+  }
+  60% {
+    color: #000;
+  }
+}
+@keyframes flashIncorrect {
+  30% {
+    color: #f00;
+  }
+  50% {
+    color: #f00;
+  }
+  60% {
+    color: #000;
+  }
 }
 footer {
   backgorund-color: #a52a2a;
