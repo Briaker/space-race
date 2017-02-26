@@ -19,7 +19,43 @@
             <div class="container">
                 <div class="wrapper">
                     <div class="game">
+                            <div class="fullscreenMenuWrapper">
+                                <div class="fullscreenMenu launcherWrapper">
+                                    <h1>Space Race!</h1>
+                                    <p>Guide the Rocket ship <strong>Cohort 13</strong> to the Moon!</p>
+                                    <ul>
+                                        <li>Evalute logic statements correctly to move the ship</li>
+                                        <li>Gussesing incorrectly costs the ship a fuel penalty</li>
+                                        <li>If you run out of fuel the mission fails!</li>
+                                    </ul>
+                                    <div class="options">
+                                        <label for="difficulty">Difficulty</label>
+                                        <select id="difficulty">
+                                            <option value="0">Easy</option>
+                                            <option value="1">Medium</option>
+                                            <option value="2">Hard</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <button value="launch">Launch!</button>
+                                </div>
+
+                                <div class="fullscreenMenu victoryWrapper menuHide">
+                                    <h1>Mission Success!</h1>
+                                    
+                                    <button value="restartGame">Lanuch again!</button>
+                                </div>
+
+                                <div class="fullscreenMenu failureWrapper menuHide">
+                                    <h1>Mission Failed!</h1>
+                                    
+                                    <button value="restartGame">Try again!</button>
+                                </div>
+
+                            </div>
                         <div class="controlsWrapper"> <!--container for left side content START -->
+                            
+
 
                             <div class="questionWrapper">
                                 <div class="questions">
@@ -39,31 +75,24 @@
                             </div>
                             
                             <div class="buttonWrapper"> <!--BUTTON START -->
-                                <button class="true answer" value="true">
-                                    True
-                                </button>
-                                <button class="false answer" value="false">
-                                    False
-                                </button>
+                                <button class="true answer" value="true">True</button>
+                                <button class="false answer" value="false">False</button>
                             </div>
 
                             <div class="fuelWrapper"> <!--FUEL START -->
-                                <div class="fuel">
-                                    FUEL
+                                <div class="fuelInfoWrapper">
+                                <p style="color: white">Progress <span class="correctQuestions">X</span>/<span class="questionsNeeded">X</span></p>
                                 </div>
-
                                 <div class="fuelGaugeWrapper">
                                     <div class="fuelInnerWrapper">
                                         <div class="fuelGaugeFiller"></div>
-                                        <div class="fuelGaugeFillerReserve"></div>
                                         <div class="fuelGaugeFillerCover"></div>
                                     </div>
                                     <div class="fuelGaugeFrame"></div>
                                 </div>
                             </div>
-                            <button value="skip">Skip</button>
-                            <button value="show">show</button>
-                            <h1 style="color: white">Questions <span class="currentQuestions">X</span>/<span class="maxQuestions">X</span></h1>
+                            <!-- <button value="skip">Skip</button> -->
+                            
 
 <!--                                 <button class="start" value="start">Start</button>
                                 <button class="pause" value="pause">Pause</button>

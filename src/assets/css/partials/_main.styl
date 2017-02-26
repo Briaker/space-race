@@ -5,6 +5,7 @@ body
     background url('../images/moon_corner_body_01.png') #05060a
     font-family: 'Orbitron', sans-serif;
     background-repeat no-repeat
+    color #FFFFFF
     
 .container 
     flexCenter()
@@ -28,12 +29,43 @@ section
     flexCenter()
     justify-content space-between
     
+.fullscreenMenuWrapper
+    flexCenter()
+    flex-direction column
+    position absolute
+    padding 10%
+    top 0
+    bottom 0
+    left 0
+    right 0
+    background rgba(0,0,0,0.8)
+    z-index 100
+
+.fullscreenMenu
+    flexCenter()
+    flex-direction column
+    background #050b19
+    width 100%
+    height 100%
+    border-radius 20px
+    
+.victoryWrapper, .fullscreenMenuWrapper.victory
+    background none
+
+.menuHide
+    display none
+// Controls Wrapper    
+    
 .controlsWrapper
     display flex
     flex-direction column
     align-items center
     width 80%
+    opacity 1
     transition 1s opacity ease
+    
+.controlsWrapper.moonLanding
+    animation 0.4s linear 0s fadeOut forwards
     
 .questionWrapper
     background url('../images/expression_window_03.png')
@@ -80,13 +112,12 @@ BUTTONS/CONTROLS
     display flex
     justify-content space-around
     
-    
 .buttonWrapper button
     text-transform uppercase
     text-shadow 2px 2px rgba(0,0,0,0.5)
     width 156px
     height 156px
-    color #fff
+    color #FFFFFF
     font-size 30px
     font-weight 400
     outline none
@@ -110,16 +141,24 @@ FUEL
     flexCenter()
     flex-direction column
     width 80%
-    color #fff
+    color #FFFFFF
     
-.fuel
-    width 100%
-    padding-bottom: 10px
-    text-align right
+.fuelInfoWrapper
+    display flex
+    justify-content center
+    width 80%
     text-transform uppercase
     font-size 25px
     letter-spacing 5px
     text-shadow 2px 2px rgba(0,0,0,0.5)
+    
+.fuel
+    width 50%
+    padding-bottom: 10px
+    text-align right
+    
+.errors
+    width 50%
 
 // 104 / 642 = 16.1993% 
 // imageHeight / imageWidth = paddingHeight
@@ -177,7 +216,6 @@ FUEL
     bottom 0
     z-index 5   
 
-
 .spaceWrapper
     flexCenter()
     margin 25px
@@ -188,16 +226,19 @@ FUEL
     height 750px
     background url('../images/space.jpg') black
     background-position center 100%
-    transition 2s background-position ease
+    transition 1s background-position ease
     background-repeat no-repeat
     position relative
     overflow hidden
+    
+ .spaceWrapper.moonLanding
+     width 100%
+     margin-left 25px
     
 .rocket
     transition 2s all ease
     position absolute
     height 350px
-    // flexCenter()
     svg
         height 350px
         width 200px
@@ -227,13 +268,13 @@ FUEL
 .moon
     transition 1.2s all ease
     position absolute
-    transform translateY(-90%)
+    transform translateY(-100%)
     svg
         height 600px
         width 600px
         
 .moon.hide
-    transform translateY(-120%)
+    transform translateY(-150%)
 
 
 .grass
@@ -268,9 +309,17 @@ FUEL
     
 .question.incorrect > *
     animation 0.4s linear 0s flashIncorrect
-    
+
 
 // ANIMATIONS
+
+@keyframes fadeOut
+    99%
+        opacity 0
+    100%
+        opacity 0
+        width 0
+        
 @keyframes flashCorrect
     30%
         color $questionColorCorrect
@@ -344,9 +393,11 @@ MEDIA QUERIES
         padding-bottom 0
         justify-content space-between
         
+    .fullscreenMenuWrapper
+        padding 0
         
-    .controlsWrapper.moonLanding
-        opacity 0
+    .fullscreenMenu
+        border-radius 0
         
     //0.2931785195936139
     .questionWrapper
@@ -371,6 +422,9 @@ MEDIA QUERIES
         margin 0
         border-radius 0
         border none
+        
+    .spaceWrapper.moonLanding
+        margin-left 0
     
     .buttonWrapper
         justify-content space-between
