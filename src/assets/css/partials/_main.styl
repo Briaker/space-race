@@ -2,256 +2,419 @@ html
     font-family $openSans
     
 body 
-	background url('../images/moon_corner_body_01.png') #05060a
-	font-family: 'Orbitron', sans-serif;
-	background-repeat no-repeat
-	
+    background url('../images/moon_corner_body_01.png') #05060a
+    font-family: 'Orbitron', sans-serif;
+    background-repeat no-repeat
+    
 .container 
-	flexCenter()
-	width 100%
-	height 100vh
-	
+    flexCenter()
+    width 100%
+    height 100vh
+    
 .wrapper
-	width $wrapperWidth
-	height $wrapperHeight
-	background url('../images/glare_03.png') #050b19
-	border-radius 20px
-	background-size contain
-	background-position left center
-	background-repeat no-repeat 
+    width $wrapperWidth
+    height $wrapperHeight
+    background url('../images/glare_03.png') #050b19
+    border-radius 20px
+    background-size contain
+    background-position left center
+    background-repeat no-repeat 
 
 section
-	flexCenter()
-	width $full
-	
+    flexCenter()
+    width $full
+    
 .game
-	flexCenter()
-	justify-content space-between
-	
+    flexCenter()
+    justify-content space-between
+    
 .controlsWrapper
-	display flex
-	flex-direction column
-	// flex-wrap wrap
-	width 80%
-	padding 85px
-	// background purple
-	
+    display flex
+    flex-direction column
+    align-items center
+    width 80%
+    transition 1s opacity ease
+    
 .questionWrapper
-	background url('../images/expression_window_03.png')
-	background-repeat no-repeat
-	background-position center center
-	background-size contain
-	flexCenter()
-	flex-direction column
-	width 740px
-	height 320px
-	
-.questions
-	font-size 22px
-	
+    background url('../images/expression_window_03.png')
+    background-repeat no-repeat
+    background-position center center
+    background-size contain
+    flexCenter()
+    flex-direction column
+    width 740px
+    height 320px
+    
+.question
+    margin 0
+    height 2rem
+    font-size 40px
+    
+.mediumQuestion
+    font-size 20px
+    
+.largeQuestion
+    font-size 25px
+    
 .timerWrapper
-	position relative
-	top 40px
-	left 60px
-	bottom 0
-	width 100%
-	height 100px
-	text-align center
-	
+    position relative
+    top 100px
+    left 60px
+    bottom 0
+    width 100%
+    height 100px
+    text-align center
+    
 .timer
-	width 30%
-	// background brown
-	
+    width 30%
+    
 
 /********************
 BUTTONS/CONTROLS
 ********************/
 
 .buttonWrapper
-	width 100%
-	margin 30px 0 
-	// background blue
-	display flex
-	justify-content space-around
-	
-	
+    width 100%
+    margin 30px 0 
+    // background blue
+    display flex
+    justify-content space-around
+    
+    
 .buttonWrapper button
-	text-transform uppercase
-	color #fff
-	font-size 30px
-	font-weight 400
-	
-	
-	
+    text-transform uppercase
+    text-shadow 2px 2px rgba(0,0,0,0.5)
+    width 156px
+    height 156px
+    color #fff
+    font-size 30px
+    font-weight 400
+    outline none
+    border none
+    
 button.true
-	background url('../images/true_button_03.png')
-	background-repeat no-repeat
-	width 156px
-	height 156px
-	border none
-	margin-right 10px
-	
+    background url('../images/true_button_03.png')
+    background-repeat no-repeat
+    margin-right 10px
+    
 button.false
-	background url('../images/false_button_03.png')
-	background-repeat no-repeat
-	width 156px
-	height 156px
-	border none
-	
+    background url('../images/false_button_03.png')
+    background-repeat no-repeat
+   
+    
 /********************
 FUEL
 ********************/
 
 .fuelWrapper
-	flexCenter()
-	flex-direction column
-	width 100%
-	color #fff
-	
+    flexCenter()
+    flex-direction column
+    width 80%
+    color #fff
+    
 .fuel
-	width 642px
-	padding-right 50px
-	padding-bottom: 10px
-	text-align right
-	text-transform uppercase
-	font-size 25px
-	letter-spacing  5px
+    width 100%
+    padding-bottom: 10px
+    text-align right
+    text-transform uppercase
+    font-size 25px
+    letter-spacing 5px
+    text-shadow 2px 2px rgba(0,0,0,0.5)
 
+// 104 / 642 = 16.1993% 
+// imageHeight / imageWidth = paddingHeight
 .fuelGaugeWrapper
-	position relative
-	width 642px
-	height 104px
-		
+    position relative
+    width 100%
+    padding-top 16.1993%
+    height 0
+    z-index 5
+        
 .fuelGaugeFiller
-	background linear-gradient(0deg, #536DB8, white)
-	width 602px
-	height 80px
-	top 50%
-	left 50%
-	transform translate(-50%, -50%)
-	position absolute
+    position absolute
+    width 100%
+    left 0
+    top 0
+    bottom 0
+    background linear-gradient(0deg, #536DB8, white)
+    border-radius 60px
+    z-index 2
 
 .fuelGaugeFillerReserve
-	background linear-gradient(0deg, brown, white)
-	width 15%
-	left 0
-	height 80px
-	position absolute
-	z-index 5
+    position absolute
+    width 15%
+    left 0
+    top 0
+    bottom 0
+    background linear-gradient(0deg, brown, white)
+    border-radius 50px
+    z-index 3
 
+.fuelInnerWrapper
+    position absolute
+    margin 2%
+    left 0
+    right 0
+    top 0
+    bottom 0
+        
 .fuelGaugeFillerCover
-	background #050b19
-	width 90%
-	right 0
-	height 80px
-	position absolute
-	z-index 5
-	
+    position absolute
+    background #050b19
+    transition 0.5s width ease
+    right 1%
+    top 0
+    bottom 0
+    z-index 4
+    
 .fuelGaugeFrame
-	width 642px
-	height 104px
-	position absolute
-	background url('../images/fuel_bar_03.png')	
-	background-repeat no-repeat
-	background-size cover
-	
-	
+    position absolute
+    background url('../images/fuel_bar_03.png')
+    background-size 100%
+    left 0
+    right 0
+    top 0
+    bottom 0
+    z-index 5   
+
 
 .spaceWrapper
-	flexCenter()
-	margin 25px
-	margin-left 0
-	border 10px solid #536DB8
-	border-radius 20px
-	width 35%
-	height 750px
-	background url('../images/space.jpg') black
-	background-position center 100%
-	transition 2s all ease
-	background-repeat no-repeat
-	position relative
-	overflow hidden
-	
+    flexCenter()
+    margin 25px
+    margin-left 0
+    border 10px solid #536DB8
+    border-radius 20px
+    width 35%
+    height 750px
+    background url('../images/space.jpg') black
+    background-position center 100%
+    transition 2s background-position ease
+    background-repeat no-repeat
+    position relative
+    overflow hidden
+    
 .rocket
-	transition 2s all ease
-	position absolute
-	height 350px
-	// flexCenter()
-	svg
-		height 350px
-		width 200px
+    transition 2s all ease
+    position absolute
+    height 350px
+    // flexCenter()
+    svg
+        height 350px
+        width 200px
 
 .rocket.earth
-	bottom 0
-	
+    bottom 0
+    
 .rocket.space
-	bottom 50%
-	transform translateY(50%)
-	
+    bottom 50%
+    transform translateY(50%)
+    
 .rocket.moonLanding
-	top 1%
-	transform rotate(180deg)
-	
+    top 1%
+    transform rotate(180deg)
+
+#flameOne
+    opacity 1
+    animation 0.4s ease-in-out 0s flameOne infinite
+
+#flameTwo
+    opacity 0
+    animation 0.4s ease-in-out 0s flameTwo infinite
+
+.flamesOff
+    display none
+    
 .moon
-	transition 1.2s all ease
-	position absolute
-	top -65%
-	svg
-		height 600px
-		width 600px
-		
+    transition 1.2s all ease
+    position absolute
+    transform translateY(-90%)
+    svg
+        height 600px
+        width 600px
+        
 .moon.hide
-	transform translateY(-50%)
+    transform translateY(-120%)
 
 
 .grass
-	transition 1.2s all ease
-	position absolute
-	bottom -10px
-	svg
-		min-width 100%
-		height 100px
-		width 1400px
-		
+    transition 1.2s all ease
+    position absolute
+    bottom -10px
+    svg
+        min-width 100%
+        height 100px
+        width 1400px
+        
 .grass.hide
-	transform translateY(100%)
+    transform translateY(100%)
 
 .question
-	color $questionColor
+    color $questionColor
 
 .question .value
-	font-weight 600
-	// transition 2s color ease
-	
+    font-weight 600
+    // transition 2s color ease
+    
 .question .comparisonOperator
-	font-weight 600
-	color darken($questionColor, 8)
-	
+    font-weight 600
+    color darken($questionColor, 8)
+    
 .question .logicOperator
-	font-weight 600
-	color darken($questionColor, 8)
-	
+    font-weight 600
+    color darken($questionColor, 8)
+    
 .question.correct > *
-	animation 0.4s linear 0s flashCorrect
-	
+    animation 0.4s linear 0s flashCorrect
+    
 .question.incorrect > *
-	animation 0.4s linear 0s flashIncorrect
-	
+    animation 0.4s linear 0s flashIncorrect
+    
 
 // ANIMATIONS
 @keyframes flashCorrect
-	30%
-		color $questionColorCorrect
-	50%
-		color $questionColorCorrect
-	60%
-		color $questionColor
-		
+    30%
+        color $questionColorCorrect
+    50%
+        color $questionColorCorrect
+    60%
+        color $questionColor
+        
 
 @keyframes flashIncorrect
-	30%
-		color $questionColorIncorrect
-	50%
-		color $questionColorIncorrect
-	60%
-		color $questionColor
+    30%
+        color $questionColorIncorrect
+    50%
+        color $questionColorIncorrect
+    60%
+        color $questionColor
+        
+
+@keyframes flameOne
+    0%
+        opacity 1
+    30%
+        opacity 0
+    60%
+        opacity 1
+    90%
+        opacity 0
+    100%
+        opacity 1
+        
+@keyframes flameTwo
+    0%
+        opacity 0
+    30%
+        opacity 1
+    60%
+        opacity 0
+    90%
+        opacity 1
+    100%
+        opacity 0
+
+/********************
+MEDIA QUERIES
+********************/
+
+@media (max-width: 1200px)
+
+    body
+        background pink
+        
+    .game
+        direction rtl
+        
+    .game > *
+        direction ltr
+        
+    .wrapper
+        width 100%
+        height 100vh
+        background none
+        
+    .controlsWrapper
+        position absolute
+        width 100%
+        height 100vh
+        z-index 10
+        left 50%
+        transform translateX(-50%)
+        padding-top 0
+        padding-bottom 0
+        justify-content space-between
+        
+        
+    .controlsWrapper.moonLanding
+        opacity 0
+        
+    //0.2931785195936139
+    .questionWrapper
+        position initial
+        background url('../images/responsive_expression_window_03.png')
+        background-repeat no-repeat
+        background-position center center
+        background-size contain
+        width 80%
+        height 29.3178%
+        z-index 5
+        padding-top 20px
+    
+    .timerWrapper
+        flexCenter()
+        position initial
+        height auto
+
+    .spaceWrapper
+        width 100%
+        height 100vh
+        margin 0
+        border-radius 0
+        border none
+    
+    .buttonWrapper
+        justify-content space-between
+        
+    .fuelWrapper
+        width 70%
+        
+    .grass
+        display flex
+        justify-content center
+        width 150vw
+        svg
+            // width 150vw
+            height 100px
+        
+@media (max-width: 480px)      
+    .buttonWrapper
+        padding 0
+        
+    .buttonWrapper button
+        font-size 18px
+        width 80px
+        height 80px
+        background-size contain
+        
+    .questionWrapper
+        background-position center top
+        justify-content flex-start
+        width 100%
+        
+    .fuel
+        font-size 20px
+        
+    .clock
+        font-size 25px
+        
+    .question
+        font-size 30px
+        
+    .mediumQuestion
+        font-size 18px
+        
+    .largeQuestion
+        font-size 15px
+        
+
+        

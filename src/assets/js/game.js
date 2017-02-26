@@ -91,17 +91,18 @@ $(document).ready(function() {
     var $question = $('.question');
     var $clock = $('.clock');
 
-    // var $currentFuel = $('.currentFuel');
-    // var $maxFuel = $('.maxFuel');
     var $fuel = $('.fuel');
     var $fuelGauge = $('.fuelGaugeFillerCover');
-
-    var $currentError = $('.currentError');
-    var $maxError = $('.maxError');
+    var $fuelGaugeReserve = $('.fuelGaugeFillerReserve');
+    var $controls = $('.controlsWrapper');
+    var $currentQuestion = $('.currentQuestions');
+    var $maxQuestions = $('.maxQuestions');
 
     var $spaceWrapper = $('.spaceWrapper');
     
     var $rocket = $('.rocket');
+    var $flameOne = $('#flameOne');
+    var $flameTwo = $('#flameTwo');
     var $moon = $('.moon');
     var $ground = $('.grass');
 
@@ -126,7 +127,12 @@ $(document).ready(function() {
         // Updates the timer html element with current time
         // TODO: Make an event listener for when the currentTime changes, then update element
         updateClockElement: function() {
-             $clock.html(this.currentTime);
+            var leadingZero = '';
+            if(String(this.currentTime).length === 1) {
+                leadingZero = '0';
+            }
+
+            $clock.html(`00:${leadingZero}${this.currentTime}`);
         },
 
         // This function runs every time the time counts down
@@ -220,7 +226,7 @@ $(document).ready(function() {
             this.currentQuestion = 0;
             this.errors = 0;
 
-            this.generateQuestions(game.numberOfQuestions);
+            this.generateQuestions(game.numberOfQuestions + gameConfig.difficultyLevels[selectedDifficulty].maxErrors);
 
             this.spacePosition = this.getCurrentProgress();
             this.maxFuel = this.getCurrentProgress();
@@ -246,10 +252,9 @@ $(document).ready(function() {
         },
 
         getCurrentProgress: function() {
-            var numberOfQuestions = this.questions.length;
             var currentQuestion = this.currentQuestion;
             var progress = Math.floor(
-                (((numberOfQuestions - 1) - currentQuestion) / (numberOfQuestions - 1) ) * 100
+                (((this.numberOfQuestions - 1) - currentQuestion) / (this.numberOfQuestions - 1) ) * 100
             );
 
             if(progress >= 0){
@@ -258,15 +263,28 @@ $(document).ready(function() {
         },
 
         getCurrentFuel: function() {
-            var numberOfQuestions = this.questions.length;
             var currentQuestion = this.currentQuestion;
             var maxErrors = gameConfig.difficultyLevels[this.difficulty].maxErrors;
-            var progress = Math.floor(
-                (((numberOfQuestions - 1) - currentQuestion) / (numberOfQuestions - 1) ) * 100
+
+            var fuel = Math.floor(
+                (((this.numberOfQuestions - 1 + maxErrors) - currentQuestion) / (this.numberOfQuestions - 1 + maxErrors) ) * 100
             );
 
-            if(progress >= 0){
-                return progress;
+            if(fuel >= 0){
+                return fuel;
+            }
+        },
+
+        getReserveFuel: function() {
+            var currentQuestion = this.currentQuestion;
+            var maxErrors = gameConfig.difficultyLevels[this.difficulty].maxErrors;
+
+            var fuel = Math.floor(
+                ((maxErrors - 1) / (this.numberOfQuestions - 1)) * 100
+            );
+
+            if(fuel >= 0){
+                return fuel;
             }
         },
 
@@ -274,39 +292,43 @@ $(document).ready(function() {
             console.log('NEXT QUESTION');
             // Checks to see if the current question is NOT the last one in the array
 
-            if(this.currentQuestion < this.questions.length - 1 && this.errors < gameConfig.difficultyLevels[this.difficulty].maxErrors) {
+            // if(this.currentQuestion < this.questions.length - 1 && this.errors < gameConfig.difficultyLevels[this.difficulty].maxErrors) {
+            if(this.currentQuestion < this.questions.length - 1) {
                 // Increment to next question
                 this.currentQuestion += 1;
                 
                 // If the answer was correct consume fuel
                 if(correctAnswer) {
-
+                    console.log('CORRECT');
                     if(!this.rocketLuanched) {
                         // console.log('ROCKET LAUNCHED');
-                        this.rocketLuanched = true
+                        this.rocketLuanched = true;
+                        $flameOne.removeClass('flamesOff');
+                        $flameTwo.removeClass('flamesOff');
                         $rocket.addClass('space');
                         $ground.addClass('hide');
                     }
                     // Calculate fuel to consume, them consume
-                    this.currentFuel = this.currentFuel - (this.questions.length * 0.05);
-                    
-                    // Update fuel HTML element
-                    this.updateFuel();
+                    // this.currentFuel = this.currentFuel - (this.questions.length * 0.05);
 
+                    this.updateFuel();
                     if(this.currentQuestion === this.questions.length - 1){
                         $moon.removeClass('hide');
+                        $flameOne.addClass('flamesOff');
+                        $flameTwo.addClass('flamesOff');
+                        $controls.addClass('moonLanding');
                         $rocket.addClass('moonLanding');
                         console.log('GAME OVER, YOU WIN');
                     }
                 }
-                else if(this.errors < gameConfig.difficultyLevels[this.difficulty].maxErrors){
-                    // console.log('MYError!' + Math.random());
-                    this.errors = this.errors + 1;
+                // else if(this.errors < gameConfig.difficultyLevels[this.difficulty].maxErrors){
+                //     // console.log('MYError!' + Math.random());
+                //     this.errors = this.errors + 1;
 
-                    if(this.errors >= gameConfig.difficultyLevels[this.difficulty].maxErrors){
-                        console.log('GAME OVER, YOU LOSE');
-                    }
-                }
+                //     if(this.errors >= gameConfig.difficultyLevels[this.difficulty].maxErrors){
+                //         console.log('GAME OVER, YOU LOSE');
+                //     }
+                // }
 
                 this.updateHTML();
             }
@@ -322,6 +344,11 @@ $(document).ready(function() {
                 for(var i = 0; i < stepSize; i++) {
                     this.questions.push(this.generateQuestion(questionDifficulty));
                 }
+                // if(questionDifficulty === 2) {
+                //     for(var i = 0; i < gameConfig.difficultyLevels[this.difficulty].maxErrors; i++) {
+                //         this.questions.push(gameConfig.difficultyLevels[this.difficulty].maxErrors);
+                //     }
+                // }
             }
         },
 
@@ -336,6 +363,10 @@ $(document).ready(function() {
             var numberOfValues = (1 + questionDifficulty) * 2;
             var numberOfComparisonOperators = (questionDifficulty);
             var numberOfLogicOperators = (questionDifficulty - 1);
+
+            var valueA = 0;
+            var valueB = 1;
+            var valueIncrement = 2;
 
             // Get a random values from an array that will be used for comparison in the in logic statement
             for(var i = 0; i < numberOfValues; i++) {
@@ -352,13 +383,6 @@ $(document).ready(function() {
                 logicOperators.push(getRandomFromArray(gameConfig.logicOperators));
             }
 
-            // TODO(Brian): Dry out this code
-            // var valueIndexA = 0;
-            var valueA = 0;
-            var valueB = 1;
-            var valueIncrement = 2 ;
-
-            // var 
             for(var i = 0; i <= questionDifficulty; i++) {
                 
                 var logicOperator = '';
@@ -379,11 +403,12 @@ $(document).ready(function() {
             }
 
             answer = eval(statement);
-            return {question, answer};
+            return {question, answer, questionDifficulty};
         },
         
         // Moves the space backbround based on the progress percentage
-        updateSpacePosition: function() {          
+        updateSpacePosition: function() {        
+            console.log('MOVING');
             // Check to see if the end had been reached
             if(this.spacePosition > 0) {
                 // Update New Space Position
@@ -394,19 +419,27 @@ $(document).ready(function() {
 
         // Updates current fuel level with new percentage value based on the current question vs total questions
         updateFuel: function() {
-            this.currentFuel = this.getCurrentProgress();
+            this.currentFuel = this.getCurrentFuel();
             this.updateHTML();
         },
 
         updateHTML: function() {
-            $fuel.html(this.maxFuel);
+            $fuel.html(`Fuel ${this.currentFuel} / ${this.maxFuel}`);
             $fuelGauge.css('width', `${this.maxFuel - this.currentFuel}%`);
-            // $currentFuel.html(this.currentFuel);
+            $fuelGaugeReserve.css('width', `${this.getReserveFuel()}%`);
 
-            $maxError.html(gameConfig.difficultyLevels[this.difficulty].maxErrors);
-            $currentError.html(this.errors);
+            // $maxError.html(gameConfig.difficultyLevels[this.difficulty].maxErrors);
+            // $currentError.html(this.errors);
+            $currentQuestion.html(this.currentQuestion + 1);
+            $maxQuestions.html(this.numberOfQuestions);
 
-            // console.log(this.currentQuestion);
+            if(this.questions[this.currentQuestion].questionDifficulty === 1) {
+                $question.addClass('mediumQuestion');
+            }
+            else if(this.questions[this.currentQuestion].questionDifficulty >= 2) {
+                $question.addClass('largeQuestion');
+            }
+
             $question.html(this.questions[this.currentQuestion].question);
             $spaceWrapper.css('background-position', `center ${this.spacePosition}%`);
         },
@@ -417,6 +450,42 @@ $(document).ready(function() {
     // ==========================
     // =     Event Handers      =
     // ==========================
+
+    $('button.answer').on('click', function() {
+        var buttonClicked = $(this);
+        if(eval(buttonClicked.val()) === game.questions[game.currentQuestion].answer) {
+            console.log('CORRECT');
+
+            // Add animation class for when the answer is correct
+            $question.addClass('correct');
+            
+            $question.on("webkitAnimationEnd oAnimationEnd msAnimationEnd animationend", function(e) {
+                // remove animation for when the answer is correct
+                if(e.originalEvent.animationName === 'flashCorrect') {
+                    $question.removeClass('correct');
+                    game.updateSpacePosition();
+                    countDownTimer.restart();
+                // console.log(e.originalEvent.animationName);
+                }
+                
+
+            });
+            game.nextQuestion(true);
+        }
+        else {
+            console.log('WRONG');
+            $question.addClass('incorrect');
+            
+            $question.on("webkitAnimationEnd oAnimationEnd msAnimationEnd animationend", function(e) {
+                if(e.originalEvent.animationName === 'flashIncorrect') {
+                    // remove animation for when the answer is correct
+                    $question.removeClass('incorrect');
+                    countDownTimer.restart();
+                }
+            });
+            game.nextQuestion(false);
+        }
+    });
 
     $('button').on('click', function() {
         // A variable to hold the button that was clicked
@@ -430,10 +499,7 @@ $(document).ready(function() {
         // else if(buttonClicked.val() === 'pause') {
         //     countDownTimer.pause();
         // } 
-        if(buttonClicked.val() === 'skip') {
-            game.updateSpacePosition();
-            game.nextQuestion(true);
-        } 
+
         // else if(buttonClicked.val() === 'start') {
         //     countDownTimer.resume();
         // }
@@ -442,31 +508,13 @@ $(document).ready(function() {
         // }
         // else 
 
-        if(eval(buttonClicked.val()) === game.questions[game.currentQuestion].answer) {
-            console.log('CORRECT');
-
-            // Add animation class for when the answer is correct
-            $question.addClass('correct');
-            
-            $question.on("webkitAnimationEnd oAnimationEnd msAnimationEnd animationend", function(e) {
-                // remove animation for when the answer is correct
-                $question.removeClass('correct');
-
-                countDownTimer.restart();
-                game.updateSpacePosition();
-            });
+        if(buttonClicked.val() === 'skip') {
+            game.updateSpacePosition();
             game.nextQuestion(true);
-        }
-        else {
-            console.log('WRONG');
-            $question.addClass('incorrect');
-            
-            $question.on("webkitAnimationEnd oAnimationEnd msAnimationEnd animationend", function(e) {
-                // remove animation for when the answer is correct
-                $question.removeClass('incorrect');
-                countDownTimer.restart();
-            });
-            game.nextQuestion(false);
-        }
+        } 
+
+        if(buttonClicked.val() === 'show') {
+            console.log(game.questions);
+        } 
     });
 });
