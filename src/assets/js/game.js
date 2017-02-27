@@ -11,7 +11,6 @@ $(document).ready(function() {
 
     var gameConfig = {
         // Various game difficultyLevels and thier settings
-        difficultyLevels: [
             {
                 difficulty: 0,
                 questions: 15
@@ -556,7 +555,7 @@ $(document).ready(function() {
         return array[randomIndex];
     }
 
-    // Initialzes the game, but doesn'y start it
+    // Initialzes the game, but doesn't start it
     game.initialize();
 
 
@@ -636,12 +635,15 @@ $(document).ready(function() {
         // } 
         // else if(buttonClicked.val() === 'pause') {
         //     countDownTimer.pause();
+        //     fuelTimer.pause();
         // } 
         // else if(buttonClicked.val() === 'start') {
         //     countDownTimer.resume();
+        //     fuelTimer.resume();
         // }
         // else if(buttonClicked.val() === 'restart') {
         //     countDownTimer.restart();
+        //     fuelTimer.restart();
         // }
         // else if(buttonClicked.val() === 'skip') {
         //     game.updateSpacePosition();
