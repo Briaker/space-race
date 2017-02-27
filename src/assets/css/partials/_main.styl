@@ -28,6 +28,9 @@ section
 .game
     flexCenter()
     justify-content space-between
+/********************
+FULLSCREEN MENU WRAPPER 
+********************/   
     
 .fullscreenMenuWrapper
     flexCenter()
@@ -48,13 +51,33 @@ section
     width 100%
     height 100%
     border-radius 20px
+    letter-spacing 1.4px
+
+.fullscreenMenu button
+    margin 20px
+    padding 10px
+    background #EFA53D
+    border 2px solid #F95200
+    border-radius 20px
+    font-weight 600
+    
+.fullscreenMenu button:hover
+    background #EC7D13
+    border 2px solid #B25102
     
 .victoryWrapper, .fullscreenMenuWrapper.victory
     background none
+    
+.victoryWrapper
+    justify-content flex-end
 
 .menuHide
     display none
-// Controls Wrapper    
+    
+    
+/********************
+CONTROLS WRAPPER 
+********************/   
     
 .controlsWrapper
     display flex
@@ -126,7 +149,6 @@ BUTTONS/CONTROLS
 button.true
     background url('../images/true_button_03.png')
     background-repeat no-repeat
-    margin-right 10px
     
 button.false
     background url('../images/false_button_03.png')
@@ -160,7 +182,7 @@ FUEL
 .errors
     width 50%
 
-// 104 / 642 = 16.1993% 
+// 104 / 642 * 100 = 16.1993% 
 // imageHeight / imageWidth = paddingHeight
 .fuelGaugeWrapper
     position relative
@@ -231,9 +253,9 @@ FUEL
     position relative
     overflow hidden
     
- .spaceWrapper.moonLanding
-     width 100%
-     margin-left 25px
+.spaceWrapper.moonLanding
+    width 100%
+    margin-left 25px
     
 .rocket
     transition 2s all ease
@@ -268,13 +290,14 @@ FUEL
 .moon
     transition 1.2s all ease
     position absolute
-    transform translateY(-100%)
+    top -50%
+    transform translateY(-25%)
     svg
         height 600px
         width 600px
         
 .moon.hide
-    transform translateY(-150%)
+    transform translateY(-100%)
 
 
 .grass
@@ -294,7 +317,6 @@ FUEL
 
 .question .value
     font-weight 600
-    // transition 2s color ease
     
 .question .comparisonOperator
     font-weight 600
@@ -367,9 +389,6 @@ MEDIA QUERIES
 ********************/
 
 @media (max-width: 1200px)
-
-    body
-        background pink
         
     .game
         direction rtl
@@ -382,6 +401,12 @@ MEDIA QUERIES
         height 100vh
         background none
         
+    .fullscreenMenuWrapper
+        padding 0
+        
+    .fullscreenMenu
+        border-radius 0
+        
     .controlsWrapper
         position absolute
         width 100%
@@ -393,13 +418,8 @@ MEDIA QUERIES
         padding-bottom 0
         justify-content space-between
         
-    .fullscreenMenuWrapper
-        padding 0
-        
-    .fullscreenMenu
-        border-radius 0
-        
-    //0.2931785195936139
+    // 202 / 689 * 100 = 29.3178% 
+    // imageHeight / imageWidth = paddingHeight
     .questionWrapper
         position initial
         background url('../images/responsive_expression_window_03.png')
@@ -428,6 +448,7 @@ MEDIA QUERIES
     
     .buttonWrapper
         justify-content space-between
+        padding 0 30px
         
     .fuelWrapper
         width 70%
@@ -441,25 +462,11 @@ MEDIA QUERIES
             height 100px
         
 @media (max-width: 480px)      
-    .buttonWrapper
-        padding 0
-        
-    .buttonWrapper button
-        font-size 18px
-        width 80px
-        height 80px
-        background-size contain
         
     .questionWrapper
         background-position center top
         justify-content flex-start
         width 100%
-        
-    .fuel
-        font-size 20px
-        
-    .clock
-        font-size 25px
         
     .question
         font-size 30px
@@ -470,5 +477,17 @@ MEDIA QUERIES
     .largeQuestion
         font-size 15px
         
-
+    .clock
+        font-size 25px
         
+    .buttonWrapper
+        padding 0
+        
+    .buttonWrapper button
+        font-size 18px
+        width 80px
+        height 80px
+        background-size contain
+        
+    .fuel
+        font-size 20px

@@ -1,18 +1,14 @@
+// Authors: Michelle Co, Brian Baker
+// This game challenges users with logic statements that need to be evaluated, for every correct answer a rocketship moves closer to the moon, and for every inccorect answer the ship loses a large amount of fuel
+
 $(document).ready(function() {
     console.log("YAY!")
 
 
-    // TODOs:
-    //      Create events for correct and incorrect answers
-    //          These will change gameplay settings
-    //              The settings will have thier own events that watch for value changes
-    //      
-    //              Create events for when the question difficulty increases
-    //                  have error level indicator(green, yellow, red)
-
     // ==========================
     // =      Game Config       =
     // ==========================
+
     var gameConfig = {
         // Various game difficultyLevels and thier settings
         difficultyLevels: [
@@ -29,6 +25,13 @@ $(document).ready(function() {
                 questions: 30
             }
         ],
+
+
+        // The time limit until fuel runs out
+        missionTime: 120,
+
+        // Fuel Penalty (8%)
+        penalty: 0.08,
 
         // An array of astronaut names
         astronauts: [
@@ -64,64 +67,65 @@ $(document).ready(function() {
         ]
     }
 
+
     // ==========================
     // =      Game Object       =
     // ==========================
 
-    // TEMPORARY: these values will be replaced with user selected options
-    var selectedAstonaut = 0;
-    var selectedDifficulty = 0;
-
-    // TIME IN SECONDS
-    //TODO: MOVE TO CONFIG
-    var startTime = 100;
-
+    // All HTML Elements are defined here
+   
+    //User difficulty input
     var $difficultySetting = $('#difficulty');
 
+    // Fullscreen menus
     var $fullscreenMenuWrapper = $('.fullscreenMenuWrapper');
     var $launcherWrapper = $('.launcherWrapper');
     var $victoryWrapper = $('.victoryWrapper');
     var $failureWrapper = $('.failureWrapper');
 
+    // Game controls menus
     var $controlsWrapper = $('.controlsWrapper');
-
     var $question = $('.question');
     var $clock = $('.clock');
 
-    var $errors = $('.errors');
+    // Progress indicator
+    var $correctQuestions = $('.correctQuestions');
+    var $questionsNeeded = $('.questionsNeeded');
+    
+    // Fuel guage
     var $fuel = $('.fuel');
     var $fuelGauge = $('.fuelGaugeFillerCover');
     var $fuelGaugeReserve = $('.fuelGaugeFillerReserve');
 
-    var $correctQuestions = $('.correctQuestions');
-    var $questionsNeeded = $('.questionsNeeded');
-
+    // Space window wrapper
     var $spaceWrapper = $('.spaceWrapper');
     
+    // SVGs
     var $rocket = $('.rocket');
     var $flameOne = $('#flameOne');
     var $flameTwo = $('#flameTwo');
     var $moon = $('.moon');
     var $ground = $('.grass');
 
+
     // -------------------------
-    // - Setup Countdown Timer -
+    // -    Countdown Timer    -
     // -------------------------
-    // console.log('[NEW TIMER]');
 
     var countDownTimer = {
         // The object that will hold the timer
         timer: {},
         
         // The inital start time, should never be manipulated
-        startTime: startTime,
+        startTime: gameConfig.missionTime,
         
         // The current time
-        currentTime: startTime,
+        currentTime: gameConfig.missionTime,
         
         // The interval between the timer tics
         interval: 1000,
         
+        // Takes a number and returns a string formated with a leading zero
         formatTime: function(number) {
             var leadingZero = '';
             if(String(number).length === 1) {
@@ -155,8 +159,9 @@ $(document).ready(function() {
 
         },
 
+        // Penalty for answering incorrectly
         spendTime: function() {
-            this.currentTime = this.currentTime - (this.startTime * 0.1);
+            this.currentTime = this.currentTime - (this.startTime * gameConfig.penalty);
         },
 
         // Intitializes the timer object
@@ -192,7 +197,7 @@ $(document).ready(function() {
         timer: {},
         
         // The inital start time, should never be manipulated
-        targetTime: (startTime * 10),
+        targetTime: (gameConfig.missionTime * 10),
 
         currentTime: 0,
         
@@ -208,7 +213,6 @@ $(document).ready(function() {
         countDown: function() {
             // Check if the timer has reached zero, if it has reset the timer and skip the current question 
             if(this.currentTime >= this.targetTime) {
-                // this.currentTime = 0;
                 this.pause();
                 game.checkGameStatus();
             }
@@ -222,12 +226,14 @@ $(document).ready(function() {
 
         },
 
+        // Returns the current fuel level as a percentage
         getFuelLevel: function() {
             return (this.currentTime / this.targetTime) * 100
         },
 
+        // Penalty for answering incorrectly
         spendFuel: function() {
-                this.currentTime = this.currentTime + (this.targetTime * 0.1);  
+                this.currentTime = this.currentTime + (this.targetTime * gameConfig.penalty);  
         },
 
         // Intitializes the timer object
@@ -267,9 +273,6 @@ $(document).ready(function() {
         // Selected difficulty level
         difficulty: 0,
 
-        // Selected astronaut
-        astronaut: 0,
-
         // Current fuel
         currentFuel: 0,
 
@@ -288,29 +291,23 @@ $(document).ready(function() {
         // An array of questions
         questions: [],
 
+        // The position of the space background image
         spacePosition: 0,
 
+        // A bool to determine if the Rocket ship has launched
         rocketLuanched: false,
 
+        // Initialzes all game properties with values default vaules from gameConfig and set manually 
         initialize: function() {
-            this.difficulty = gameConfig.difficultyLevels[selectedDifficulty].difficulty;
-
-            this.astronaut = gameConfig.astronauts[selectedAstonaut];
-
+            // Reset all properties
+            this.difficulty = game.difficulty;
             this.currentFuel = this.getCurrentProgress();
-
-            this.numberOfQuestions = gameConfig.difficultyLevels[selectedDifficulty].questions;
-
+            this.numberOfQuestions = gameConfig.difficultyLevels[game.difficulty].questions;
             this.neededAnswers = this.numberOfQuestions - (this.numberOfQuestions / 3);
-
             this.currentQuestion = 0;
-
             this.correctAnswers = 0;
-            
             this.questions = [];
-
             this.spacePosition = this.getCurrentProgress();
-
             this.rocketLuanched = false
 
             // Reset all html elements
@@ -328,12 +325,17 @@ $(document).ready(function() {
             $ground.removeClass('hide');
             $moon.addClass('hide');
 
+            // Generate new set of questions
             this.generateQuestions(game.numberOfQuestions);
 
+            // Reset the position of the Rocket ship
             this.updateSpacePosition();
+
+            // Update All HTML menu elements
             this.updateHTML();
         },
 
+        // Starts the Game
         start: function() {
             this.initialize();
             this.launchRocket();
@@ -341,16 +343,16 @@ $(document).ready(function() {
             countDownTimer.initialize();
         }, 
 
+        // Re-intializes all game values and timers
         restart: function() {
             this.initialize();
             fuelTimer.restart();
             countDownTimer.restart();
         },
 
+        // Check weather the mission has succeded or failed, and triggers the approprate animations and changes
         checkGameStatus: function() {
-            // Check if mission has succeded or failed
             if(this.getCurrentProgress() <= 0) {
-                console.log('GAME OVER, YOU WIN');
                 fuelTimer.pause();
                 countDownTimer.pause();
                 $moon.removeClass('hide');
@@ -371,9 +373,10 @@ $(document).ready(function() {
             }
         },
 
+        // Returns the current progress as a percentage
         getCurrentProgress: function() {
             var progress = Math.floor(
-                (((this.neededAnswers) - this.correctAnswers) / (this.neededAnswers) ) * 100
+                ((this.neededAnswers - this.correctAnswers) / this.neededAnswers) * 100
             );
 
             if(progress >= 0){
@@ -381,6 +384,7 @@ $(document).ready(function() {
             }
         },
 
+        // Check if the question is correct or incorrect, then changes to the next question
         nextQuestion: function(correctAnswer = false) {
             // Checks to see if the current question is NOT the last one in the array
 
@@ -394,7 +398,6 @@ $(document).ready(function() {
                     this.correctAnswers++;
                 }
                 else {
-                    console.log(fuelTimer.getFuelLevel());
                     if(fuelTimer.getFuelLevel() < 100) {
                         fuelTimer.spendFuel();
                         countDownTimer.spendTime();
@@ -413,6 +416,7 @@ $(document).ready(function() {
         generateQuestions: function(numberOfQuestions) {
             var stepSize = (numberOfQuestions / 3)
 
+            // Divides the number of questions into three stages, and generates questions with difficulty settings for that stage. Stage three gets and additions set of questions
             for(var difficultyStep = stepSize; difficultyStep <= numberOfQuestions; difficultyStep = difficultyStep + stepSize) {
                 var questionDifficulty = (difficultyStep / stepSize) - 1;
                 for(var i = 0; i < stepSize; i++) {
@@ -478,9 +482,12 @@ $(document).ready(function() {
             }
 
             answer = eval(statement);
+
+            // Returns an object with the question, it's answer and it's difficulty
             return {question, answer, questionDifficulty};
         },
 
+        // Launches the rocket
         launchRocket: function() {
             if(!this.rocketLuanched) {
                 this.rocketLuanched = true;
@@ -499,6 +506,7 @@ $(document).ready(function() {
             if(this.spacePosition > 0) {
                 // Update New Space Position
                 this.spacePosition = this.getCurrentProgress();
+                // Update the HTML elements
                 this.updateHTML();
             }
         },
@@ -509,13 +517,14 @@ $(document).ready(function() {
             $fuelGauge.css('width', `${this.currentFuel}%`);
         },
 
-        // make methods for every element group
-        updateHTML: function() {
-            this.updateFuel();
-
+        // Updates the progress indicator Element
+        updateProgressIndicator: function() {
             $correctQuestions.html(this.correctAnswers);
             $questionsNeeded.html(this.neededAnswers);
+        },
 
+        // Adds css class to the question as the question gets longer
+        updateQuestionClass: function() {
             if(this.questions[this.currentQuestion].questionDifficulty === 1) {
                 $question.addClass('mediumQuestion');
             }
@@ -524,88 +533,122 @@ $(document).ready(function() {
             }
 
             $question.html(this.questions[this.currentQuestion].question);
+        },
+
+        // Updates the background position of the space wrapper
+        updateSpaceWrapper: function() {
             $spaceWrapper.css('background-position', `center ${this.spacePosition}%`);
+        },
+
+        // Updates all menu HTML elemnts
+        updateHTML: function() {
+            this.updateProgressIndicator();
+            this.updateFuel();
+            this.updateQuestionClass();
+            this.updateSpaceWrapper();
+            
         },
     }
 
+    // Returns a random value from the given array
     function getRandomFromArray(array) {
         var randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
     }
 
-
+    // Initialzes the game, but doesn'y start it
     game.initialize();
+
 
     // ==========================
     // =     Event Handers      =
     // ==========================
 
+    // Hander for the Answer Buttons
     $('button.answer').on('click', function() {
-        var buttonClicked = $(this);
-        if(eval(buttonClicked.val()) === game.questions[game.currentQuestion].answer) {
 
-            // Add animation class for when the answer is correct
+        // The button that was clicked
+        var buttonClicked = $(this);
+
+        // The value of the button clicked matches the value of the question's answer
+        if(eval(buttonClicked.val()) === game.questions[game.currentQuestion].answer) {
+            // Flashes the question text green
             $question.addClass('correct');
             
+            // Wait for flash to end
             $question.on("webkitAnimationEnd oAnimationEnd msAnimationEnd animationend", function(e) {
-                // remove animation for when the answer is correct
+                
+                // When any animation on this element ends this code block runs
                 if(e.originalEvent.animationName === 'flashCorrect') {
+                    
+                    // Removes animation
                     $question.removeClass('correct');
+                    
+                    // Moves the ship
                     game.updateSpacePosition();
                 }
-                
-
             });
+
+            // Move onto the next question, passing that the question was answered correctly
             game.nextQuestion(true);
         }
         else {
+
+            // Flashes the question text red
             $question.addClass('incorrect');
             
+            // Wait for flash to end
             $question.on("webkitAnimationEnd oAnimationEnd msAnimationEnd animationend", function(e) {
+
+                // When any animation on this element ends this code block runs
                 if(e.originalEvent.animationName === 'flashIncorrect') {
-                    // remove animation for when the answer is correct
                     $question.removeClass('incorrect');
                 }
+
             });
+
+            // Move onto the next question, passing that the question was answered correctly
             game.nextQuestion(false);
         }
     });
 
+
+    // Event handlers for all other menu buttons
     $('button').on('click', function() {
-        // A variable to hold the button that was clicked
+
+        // The button that was clicked
         var buttonClicked = $(this);
 
+        // Launched the ship and starts the game
         if(buttonClicked.val() === 'launch') {
-            // console.log($difficultySetting.val());
-            selectedDifficulty = $difficultySetting.val();
+            game.difficulty = $difficultySetting.val();
             game.start();
         } 
+        // Re-initialzes the game
         else if(buttonClicked.val() === 'restartGame') {
             game.restart();
         } 
 
-
-        // DEBUG BUTTONS
-
-        if(buttonClicked.val() === 'initGame') {
-            game.restart();
-            countDownTimer.restart();
-        } 
-        else if(buttonClicked.val() === 'pause') {
-            countDownTimer.pause();
-        } 
-        else if(buttonClicked.val() === 'start') {
-            countDownTimer.resume();
-        }
-        else if(buttonClicked.val() === 'restart') {
-            countDownTimer.restart();
-        }
-        else if(buttonClicked.val() === 'skip') {
-            game.updateSpacePosition();
-            game.nextQuestion(true);
-        } 
-        else if(buttonClicked.val() === 'show') {
-            console.log(game.questions);
-        } 
+        // DEBUGGING BUTTONS
+        // if(buttonClicked.val() === 'initGame') {
+        //     game.restart();
+        //     countDownTimer.restart();
+        // } 
+        // else if(buttonClicked.val() === 'pause') {
+        //     countDownTimer.pause();
+        // } 
+        // else if(buttonClicked.val() === 'start') {
+        //     countDownTimer.resume();
+        // }
+        // else if(buttonClicked.val() === 'restart') {
+        //     countDownTimer.restart();
+        // }
+        // else if(buttonClicked.val() === 'skip') {
+        //     game.updateSpacePosition();
+        //     game.nextQuestion(true);
+        // } 
+        // else if(buttonClicked.val() === 'show') {
+        //     console.log(game.questions);
+        // } 
     });
 });

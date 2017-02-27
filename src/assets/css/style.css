@@ -295,10 +295,28 @@ section {
   width: 100%;
   height: 100%;
   border-radius: 20px;
+  letter-spacing: 1.4px;
+}
+.fullscreenMenu button {
+  margin: 20px;
+  padding: 10px;
+  background: #efa53d;
+  border: 2px solid #f95200;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.fullscreenMenu button:hover {
+  background: #ec7d13;
+  border: 2px solid #b25102;
 }
 .victoryWrapper,
 .fullscreenMenuWrapper.victory {
   background: none;
+}
+.victoryWrapper {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .menuHide {
   display: none;
@@ -390,7 +408,6 @@ section {
 button.true {
   background: url("../images/true_button_03.png");
   background-repeat: no-repeat;
-  margin-right: 10px;
 }
 button.false {
   background: url("../images/false_button_03.png");
@@ -559,16 +576,17 @@ button.false {
   -webkit-transition: 1.2s all ease;
   transition: 1.2s all ease;
   position: absolute;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  top: -50%;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
 }
 .moon svg {
   height: 600px;
   width: 600px;
 }
 .moon.hide {
-  -webkit-transform: translateY(-150%);
-          transform: translateY(-150%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 .grass {
   -webkit-transition: 1.2s all ease;
@@ -608,9 +626,6 @@ button.false {
           animation: 0.4s linear 0s flashIncorrect;
 }
 @media (max-width: 1200px) {
-  body {
-    background: #ffc0cb;
-  }
   .game {
     direction: rtl;
   }
@@ -621,6 +636,12 @@ button.false {
     width: 100%;
     height: 100vh;
     background: none;
+  }
+  .fullscreenMenuWrapper {
+    padding: 0;
+  }
+  .fullscreenMenu {
+    border-radius: 0;
   }
   .controlsWrapper {
     position: absolute;
@@ -635,12 +656,6 @@ button.false {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  .fullscreenMenuWrapper {
-    padding: 0;
-  }
-  .fullscreenMenu {
-    border-radius: 0;
   }
   .questionWrapper {
     position: initial;
@@ -680,6 +695,7 @@ button.false {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding: 0 30px;
   }
   .fuelWrapper {
     width: 70%;
@@ -698,27 +714,12 @@ button.false {
   }
 }
 @media (max-width: 480px) {
-  .buttonWrapper {
-    padding: 0;
-  }
-  .buttonWrapper button {
-    font-size: 18px;
-    width: 80px;
-    height: 80px;
-    background-size: contain;
-  }
   .questionWrapper {
     background-position: center top;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     width: 100%;
-  }
-  .fuel {
-    font-size: 20px;
-  }
-  .clock {
-    font-size: 25px;
   }
   .question {
     font-size: 30px;
@@ -728,6 +729,21 @@ button.false {
   }
   .largeQuestion {
     font-size: 15px;
+  }
+  .clock {
+    font-size: 25px;
+  }
+  .buttonWrapper {
+    padding: 0;
+  }
+  .buttonWrapper button {
+    font-size: 18px;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+  }
+  .fuel {
+    font-size: 20px;
   }
 }
 @-webkit-keyframes fadeOut {
