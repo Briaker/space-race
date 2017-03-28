@@ -2,15 +2,14 @@
 // This game challenges users with logic statements that need to be evaluated, for every correct answer a rocketship moves closer to the moon, and for every inccorect answer the ship loses a large amount of fuel
 
 $(document).ready(function() {
-    console.log("YAY!")
-
-
+    // console.log("YAY!")
     // ==========================
     // =      Game Config       =
     // ==========================
 
     var gameConfig = {
         // Various game difficultyLevels and thier settings
+        difficultyLevels: [
             {
                 difficulty: 0,
                 questions: 15

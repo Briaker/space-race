@@ -529,6 +529,14 @@
 			}
 		},
 		{
+			"file": "src/assets/css/partials/_mediaQueries.styl",
+			"settings":
+			{
+				"buffer_size": 2149,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/C/sites/hackeryou/templates/translate-test.html",
 			"settings":
 			{
@@ -894,6 +902,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"anim",
 			"0.1",
 			"spaceWrapper",
 			"missionTime",
@@ -1020,8 +1029,7 @@
 			"gameObject",
 			"Object",
 			"card",
-			"pop",
-			"flipCard"
+			"pop"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1068,8 +1076,8 @@
 						"selection":
 						[
 							[
-								777,
-								777
+								4784,
+								4784
 							]
 						],
 						"settings":
@@ -1080,14 +1088,45 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 400.0,
+						"translation.y": 3120.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "src/assets/css/partials/_mediaQueries.styl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1866
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/itg.dark.tmTheme",
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1640.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "/C/sites/hackeryou/templates/translate-test.html",
 					"semi_transient": false,
 					"settings":
@@ -1106,13 +1145,15 @@
 						"settings":
 						{
 							"auto_name": "<!DOCTYPE html>",
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"color_scheme": "Packages/User/Color Highlighter/themes/itg.dark.tmTheme",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

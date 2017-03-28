@@ -18,12 +18,16 @@ FULLSCREEN MENU WRAPPER
     flexCenter()
     flex-direction column
     background #050b19
-    width 100%
+    min-height 500px
+    width 50%
     height 100%
     border-radius 20px
     letter-spacing 1.4px
 
-.fullscreenMenu button
+.restartGame
+    position absolute
+
+.fullscreenMenu button, .restartGame
     margin 20px
     padding 10px
     background #EFA53D
@@ -34,12 +38,27 @@ FULLSCREEN MENU WRAPPER
 .fullscreenMenu button:hover
     background #EC7D13
     border 2px solid #B25102
-    
+
 .victoryWrapper, .fullscreenMenuWrapper.victory
     background none
     
 .victoryWrapper
     justify-content flex-end
+    
+.launcherWrapper 
+    line-height 1.8rem
+    letter-spacing 0.2rem
+    
+.launcherWrapper select
+    background #EFA53D
+    border 2px solid #F95200
+    padding 0.5rem 1rem
+    border-radius 20px
+    font-weight 600
+    
+.launcherWrapper select:focus, .fullscreenMenu button:focus, .restartGame:focus
+    outline none
+    box-shadow 0 0 0 2pt red
 
 .menuHide
     display none
